@@ -95,6 +95,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (mod_state & MOD_MASK_SHIFT) {
           del_mods(MOD_MASK_SHIFT);
           SEND_STRING(SS_TAP(X_GRV) SS_LSFT(SS_TAP(X_A)));
+          set_mods(mod_state);
         } else {
           SEND_STRING(SS_TAP(X_GRV) SS_TAP(X_A));
         }
@@ -105,6 +106,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (mod_state & MOD_MASK_SHIFT) {
           del_mods(MOD_MASK_SHIFT);
           SEND_STRING(SS_TAP(X_GRV) SS_LSFT(SS_TAP(X_E)));
+          set_mods(mod_state);
         } else {
           SEND_STRING(SS_TAP(X_GRV) SS_TAP(X_E));
         }
