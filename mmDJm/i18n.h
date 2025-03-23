@@ -1,5 +1,4 @@
 #define US_HASH S(KC_3)
-#define US_AT S(KC_2)
 #define US_PLUS S(KC_EQL)
 #define US_EACU ALGR(KC_E)
 #define US_ASTR S(KC_8)
