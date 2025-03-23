@@ -132,78 +132,78 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       break;
-    case DOLAR:
-      if(record->event.pressed) {
-        if (mod_state & MOD_MASK_SHIFT) {
-          del_mod(MOD_MASK_SHIFT);
-          SEND_STRING();
-          set_mods(mod_state);
-          SEND_STRING();
-        } else {
-          SEND_STRING();
-        }
-      }
-      break;
-    case AT:
-      if(record->event.pressed) {
-        if (mod_state & MOD_MASK_SHIFT) {
-          del_mod(MOD_MASK_SHIFT);
-          SEND_STRING();
-          set_mods(mod_state);
-          SEND_STRING();
-        } else {
-          SEND_STRING();
-        }
-      }
-      break;
-    case QUOTE:
-      if(record->event.pressed) {
-        if (mod_state & MOD_MASK_SHIFT) {
-          del_mod(MOD_MASK_SHIFT);
-          SEND_STRING();
-          set_mods(mod_state);
-          SEND_STRING();
-        } else {
-          SEND_STRING();
-        }
-      }
-      break;
-    case COMMA:
-      if(record->event.pressed) {
-        if (mod_state & MOD_MASK_SHIFT) {
-          del_mod(MOD_MASK_SHIFT);
-          SEND_STRING();
-          set_mods(mod_state);
-          SEND_STRING();
-        } else {
-          SEND_STRING();
-        }
-      }
-      break;
-    case CIRC:
-      if(record->event.pressed) {
-        if (mod_state & MOD_MASK_SHIFT) {
-          del_mod(MOD_MASK_SHIFT);
-          SEND_STRING();
-          set_mods(mod_state);
-          SEND_STRING();
-        } else {
-          SEND_STRING();
-        }
-      }
-      break;
-    case DOT:
-      if(record->event.pressed) {
-        if (mod_state & MOD_MASK_SHIFT) {
-          del_mod(MOD_MASK_SHIFT);
-          SEND_STRING();
-          set_mods(mod_state);
-          SEND_STRING();
-        } else {
-          SEND_STRING();
-        }
-      }
-      break;
+    // case DOLAR:
+    //   if(record->event.pressed) {
+    //     if (mod_state & MOD_MASK_SHIFT) {
+    //       del_mod(MOD_MASK_SHIFT);
+    //       SEND_STRING();
+    //       set_mods(mod_state);
+    //       SEND_STRING();
+    //     } else {
+    //       SEND_STRING();
+    //     }
+    //   }
+    //   break;
+    // case AT:
+    //   if(record->event.pressed) {
+    //     if (mod_state & MOD_MASK_SHIFT) {
+    //       del_mod(MOD_MASK_SHIFT);
+    //       SEND_STRING();
+    //       set_mods(mod_state);
+    //       SEND_STRING();
+    //     } else {
+    //       SEND_STRING();
+    //     }
+    //   }
+    //   break;
+    // case QUOTE:
+    //   if(record->event.pressed) {
+    //     if (mod_state & MOD_MASK_SHIFT) {
+    //       del_mod(MOD_MASK_SHIFT);
+    //       SEND_STRING();
+    //       set_mods(mod_state);
+    //       SEND_STRING();
+    //     } else {
+    //       SEND_STRING();
+    //     }
+    //   }
+    //   break;
+    // case COMMA:
+    //   if(record->event.pressed) {
+    //     if (mod_state & MOD_MASK_SHIFT) {
+    //       del_mod(MOD_MASK_SHIFT);
+    //       SEND_STRING();
+    //       set_mods(mod_state);
+    //       SEND_STRING();
+    //     } else {
+    //       SEND_STRING();
+    //     }
+    //   }
+    //   break;
+    // case CIRC:
+    //   if(record->event.pressed) {
+    //     if (mod_state & MOD_MASK_SHIFT) {
+    //       del_mod(MOD_MASK_SHIFT);
+    //       SEND_STRING();
+    //       set_mods(mod_state);
+    //       SEND_STRING();
+    //     } else {
+    //       SEND_STRING();
+    //     }
+    //   }
+    //   break;
+    // case DOT:
+    //   if(record->event.pressed) {
+    //     if (mod_state & MOD_MASK_SHIFT) {
+    //       del_mod(MOD_MASK_SHIFT);
+    //       SEND_STRING();
+    //       set_mods(mod_state);
+    //       SEND_STRING();
+    //     } else {
+    //       SEND_STRING();
+    //     }
+    //   }
+    //   break;
 
     case RGB_SLD:
         if (rawhid_state.rgb_control) {
