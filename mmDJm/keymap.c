@@ -14,7 +14,7 @@ enum custom_keycodes {
 
   // CUSTOM KC
   ST_MACRO_AGRAV,
-  ST_MACRO_ECIRC
+  ST_MACRO_EGRAV
 };
 
 
@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     US_HASH,        ST_MACRO_0,     ST_MACRO_1,     CT_DQOT,        KC_MINUS,       US_PLUS,        KC_NO,                                          KC_NO,          US_ASTR,        KC_SLASH,       KC_EQUAL,       US_LPRN,        US_RPRN,        US_DLR,         
     KC_AT,          ST_MACRO_AGRAV, KC_J,           KC_O,           US_EACU,        KC_B,           KC_NO,                                          KC_NO,          KC_F,           KC_D,           KC_L,           KC_QUOTE,       KC_Q,           KC_X,           
     KC_TRANSPARENT, KC_A,           KC_I,           KC_E,           KC_U,           KC_COMMA,       KC_NO,                                                                          KC_NO,          KC_P,           KC_T,           KC_S,           KC_R,           KC_N,           US_CIRC,        
-    KC_ESCAPE,      KC_K,           KC_Y,           ST_MACRO_ECIRC, KC_DOT,         KC_W,                                           KC_G,           KC_C,           KC_M,           KC_H,           KC_V,           KC_W,           
+    KC_ESCAPE,      KC_K,           KC_Y,           ST_MACRO_EGRAV, KC_DOT,         KC_W,                                           KC_G,           KC_C,           KC_M,           KC_H,           KC_V,           KC_W,           
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
     KC_SPACE,       KC_TAB,         KC_NO,                          KC_NO,          KC_BSPC,        KC_ENTER
   ),
@@ -99,12 +99,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       break;
-    case ST_MACRO_ECIRC:
+    case ST_MACRO_EGRAV:
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
-          SEND_STRING(SS_TAP(X_QUOTE) SS_LSFT(SS_TAP(X_E)))
+          SEND_STRING(SS_TAP(X_GRV) SS_LSFT(SS_TAP(X_E)))
         } else {
-          SEND_STRING(SS_TAP(X_QUOTE) SS_TAP(X_E))
+          SEND_STRING(SS_TAP(X_GRV) SS_TAP(X_E))
         }
       }
 
