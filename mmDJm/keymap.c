@@ -93,7 +93,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_AGRAV:
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
-          SEND_STRING(SS_TAP(X_GRV) SS_LSFT(SS_TAP(X_A)))
+          SEND_STRING(SS_TAP(X_GRV) SS_LSFT(SS_TAP(X_A)));
         } else {
           SEND_STRING(SS_TAP(X_GRV) SS_TAP(X_A));
         }
@@ -102,9 +102,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_EGRAV:
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
-          SEND_STRING(SS_TAP(X_GRV) SS_LSFT(SS_TAP(X_E)))
+          SEND_STRING(SS_TAP(X_GRV) SS_LSFT(SS_TAP(X_E)));
         } else {
-          SEND_STRING(SS_TAP(X_GRV) SS_TAP(X_E))
+          SEND_STRING(SS_TAP(X_GRV) SS_TAP(X_E));
         }
       }
 
