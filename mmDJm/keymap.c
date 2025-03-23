@@ -136,7 +136,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DOLAR:
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
-          del_mod(MOD_MASK_SHIFT);
+          del_mods(MOD_MASK_SHIFT);
           SEND_STRING(SS_TAP(US_EURO));
           set_mods(mod_state);
         } else {
@@ -147,7 +147,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // case AT:
     //   if(record->event.pressed) {
     //     if (mod_state & MOD_MASK_SHIFT) {
-    //       del_mod(MOD_MASK_SHIFT);
+    //       del_mods(MOD_MASK_SHIFT);
     //       SEND_STRING();
     //       set_mods(mod_state);
     //       SEND_STRING();
@@ -159,7 +159,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // case QUOTE:
     //   if(record->event.pressed) {
     //     if (mod_state & MOD_MASK_SHIFT) {
-    //       del_mod(MOD_MASK_SHIFT);
+    //       del_mods(MOD_MASK_SHIFT);
     //       SEND_STRING();
     //       set_mods(mod_state);
     //       SEND_STRING();
@@ -171,7 +171,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // case COMMA:
     //   if(record->event.pressed) {
     //     if (mod_state & MOD_MASK_SHIFT) {
-    //       del_mod(MOD_MASK_SHIFT);
+    //       del_mods(MOD_MASK_SHIFT);
     //       SEND_STRING();
     //       set_mods(mod_state);
     //       SEND_STRING();
@@ -183,7 +183,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // case CIRC:
     //   if(record->event.pressed) {
     //     if (mod_state & MOD_MASK_SHIFT) {
-    //       del_mod(MOD_MASK_SHIFT);
+    //       del_mods(MOD_MASK_SHIFT);
     //       SEND_STRING();
     //       set_mods(mod_state);
     //       SEND_STRING();
@@ -195,7 +195,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // case DOT:
     //   if(record->event.pressed) {
     //     if (mod_state & MOD_MASK_SHIFT) {
-    //       del_mod(MOD_MASK_SHIFT);
+    //       del_mods(MOD_MASK_SHIFT);
     //       SEND_STRING();
     //       set_mods(mod_state);
     //       SEND_STRING();
