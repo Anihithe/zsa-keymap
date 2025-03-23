@@ -10,5 +10,3 @@
 
 // Custom
 #define CT_DQOT S(KC_QUOT)  // "
-// è È
-// à À
