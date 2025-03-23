@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 #include "i18n.h"
+#include keymap_us_international.h
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
 
@@ -132,18 +133,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       break;
-    // case DOLAR:
-    //   if(record->event.pressed) {
-    //     if (mod_state & MOD_MASK_SHIFT) {
-    //       del_mod(MOD_MASK_SHIFT);
-    //       SEND_STRING();
-    //       set_mods(mod_state);
-    //       SEND_STRING();
-    //     } else {
-    //       SEND_STRING();
-    //     }
-    //   }
-    //   break;
+    case DOLAR:
+      if(record->event.pressed) {
+        if (mod_state & MOD_MASK_SHIFT) {
+          del_mod(MOD_MASK_SHIFT);
+          SEND_STRING(SS_TAP(US_EURO));
+          set_mods(mod_state);
+        } else {
+          SEND_STRING(SS_LSFT(SS_TAP(X_4)));
+        }
+      }
+      break;
     // case AT:
     //   if(record->event.pressed) {
     //     if (mod_state & MOD_MASK_SHIFT) {
