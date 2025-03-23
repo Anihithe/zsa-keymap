@@ -124,7 +124,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case HASH:
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
-          del_mod(MOD_MASK_SHIFT);
+          del_mods(MOD_MASK_SHIFT);
           SEND_STRING(SS_LSFT(SS_TAP(X_5)));
           set_mods(mod_state);
         } else {
