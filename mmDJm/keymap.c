@@ -192,6 +192,111 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       }
     }
     break;
+  case KC_MINUS:
+    if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code(KC_4);
+        set_mods(mod_state);
+      }
+      else
+      {
+        tap_code(KC_MINUS);
+      }
+    }
+    break;
+  case US_PLUS:
+    if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code(KC_5);
+        set_mods(mod_state);
+      }
+      else
+      {
+        tap_code(US_PLUS);
+      }
+    }
+    break;
+  case US_ASTR:
+    if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code(KC_6);
+        set_mods(mod_state);
+      }
+      else
+      {
+        tap_code(US_ASTR);
+      }
+    }
+    break;
+  case KC_SLASH:
+  if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code(KC_7);
+        set_mods(mod_state);
+      }
+      else
+      {
+        tap_code(KC_SLASH);
+      }
+    }
+    break;
+  case KC_EQUAL:
+  if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code(KC_8);
+        set_mods(mod_state);
+      }
+      else
+      {
+        tap_code(KC_EQUAL);
+      }
+    }
+    break;
+  case US_LPRN:
+  if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code(KC_9);
+        set_mods(mod_state);
+      }
+      else
+      {
+        tap_code(US_LPRN);
+      }
+    }
+    break;
+  case US_RPRN:
+  if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code(KC_0);
+        set_mods(mod_state);
+      }
+      else
+      {
+        tap_code(US_RPRN);
+      }
+    }
+    break;
   case CKC_DOLAR:
     if (record->event.pressed)
     {

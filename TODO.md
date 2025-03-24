@@ -9,7 +9,7 @@
 ## Features
 
 - [ ] Add numbers on Shift top row
-- [ ] Add shift symboles
+- [x] Add shift symboles
   - [x] `#` => `%` swap
   - [x] `$` => `€`
   - [x] `@` => `_`
