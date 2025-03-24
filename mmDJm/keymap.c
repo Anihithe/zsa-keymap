@@ -28,12 +28,12 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    HASH,        ST_MACRO_0,     ST_MACRO_1,     CT_DQOT,        KC_MINUS,       US_PLUS,        KC_NO,                                          KC_NO,          US_ASTR,        KC_SLASH,       KC_EQUAL,       US_LPRN,        US_RPRN,        DOLAR,         
-    KC_AT,          AGRAV, KC_J,           KC_O,           US_EACU,        KC_B,           KC_NO,                                          KC_NO,          KC_F,           KC_D,           KC_L,           KC_QUOTE,       KC_Q,           KC_X,           
-    KC_LEFT_SHIFT, KC_A,           KC_I,           KC_E,           KC_U,           KC_COMMA,       KC_NO,                                                                          KC_NO,          KC_P,           KC_T,           KC_S,           KC_R,           KC_N,           US_DCIR,        
-    KC_ESCAPE,      KC_K,           KC_Y,           EGRAV, KC_DOT,         KC_W,                                           KC_G,           KC_C,           KC_M,           KC_H,           KC_V,           KC_W,           
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    KC_SPACE,       KC_TAB,         KC_NO,                          KC_NO,          KC_BSPC,        KC_ENTER
+    HASH,             ST_MACRO_0,    ST_MACRO_1,    CT_DQOT,     KC_MINUS,    US_PLUS,     KC_NO,                      KC_NO,    US_ASTR,    KC_SLASH,    KC_EQUAL,    US_LPRN,     US_RPRN,    DOLAR,
+    KC_AT,            AGRAV,         KC_J,          KC_O,        US_EACU,     KC_B,        KC_NO,                      KC_NO,    KC_F,       KC_D,        KC_L,        KC_QUOTE,    KC_Q,       KC_X,
+    KC_LEFT_SHIFT,    KC_A,          KC_I,          KC_E,        KC_U,        KC_COMMA,    KC_NO,                      KC_NO,    KC_P,       KC_T,        KC_S,        KC_R,        KC_N,       US_DCIR,
+    KC_ESCAPE,        KC_K,          KC_Y,          EGRAV,       KC_DOT,      KC_W,                                              KC_G,       KC_C,        KC_M,        KC_H,        KC_V,       KC_W,
+    KC_NO,            KC_NO,         KC_NO,         KC_NO,       KC_NO,       KC_NO,                                             KC_NO,      KC_NO,       KC_NO,       KC_NO,       KC_NO,      KC_NO,
+                                                    KC_SPACE,    KC_TAB,      KC_NO,                                             KC_NO,      KC_BSPC,     KC_ENTER
   ),
 };
 
@@ -102,11 +102,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
           del_mods(MOD_MASK_SHIFT);
-          SEND_STRING(SS_TAP(X_GRV));
+          tap_code16(KC_GRV);
           set_mods(mod_state);
-          SEND_STRING(SS_TAP(X_A));
+          tap_code16(KC_A);
         } else {
-          SEND_STRING(SS_TAP(X_GRV) SS_TAP(X_A));
+          tap_code13(KC_GRV);
+          tap_code13(KC_A);
         }
       }
       break;
@@ -114,11 +115,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
           del_mods(MOD_MASK_SHIFT);
-          SEND_STRING(SS_TAP(X_GRV));
+          tap_code16(KC_GRV);
           set_mods(mod_state);
-          SEND_STRING(SS_TAP(X_E));
+          tap_code16(KC_E);
         } else {
-          SEND_STRING(SS_TAP(X_GRV) SS_TAP(X_E));
+          tap_code13(KC_GRV);
+          tap_code13(KC_E);
         }
       }
       break;
@@ -126,10 +128,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
           del_mods(MOD_MASK_SHIFT);
-          SEND_STRING(SS_LSFT(SS_TAP(X_5)));
+          tap_code16(US_HASH);
           set_mods(mod_state);
         } else {
-          SEND_STRING(SS_LSFT(SS_TAP(X_3)));
+          tap_code16(US_PERC);
         }
       }
       break;
@@ -138,10 +140,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (mod_state & MOD_MASK_SHIFT) {
           del_mods(MOD_MASK_SHIFT);
           tap_code16(US_EURO);
-          //SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_2) SS_TAP(X_KP_8)))
           set_mods(mod_state);
         } else {
-          SEND_STRING(SS_LSFT(SS_TAP(X_4)));
+          tap_code16(US_DLR);
         }
       }
       break;
