@@ -172,7 +172,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       }
       else
       {
-        tap_code16(US_CKC_HASH);
+        tap_code16(US_HASH);
       }
     }
     break;
