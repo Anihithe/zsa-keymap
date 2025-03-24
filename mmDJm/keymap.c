@@ -96,7 +96,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
   uint8_t mod_state = get_mods();
   switch (keycode)
   {
-
+  case CKC_HASH:
+    if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code16(US_PERC);
+        set_mods(mod_state);
+      }
+      else
+      {
+        tap_code16(US_HASH);
+      }
+    }
+    break;
   case CKC_LDAQM:
     if (record->event.pressed)
     {
@@ -124,55 +138,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       else
       {
         SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_8) SS_TAP(X_KP_7)));
-      }
-    }
-    break;
-  case CKC_AGRAV:
-    if (record->event.pressed)
-    {
-      if (mod_state & MOD_MASK_SHIFT)
-      {
-        del_mods(MOD_MASK_SHIFT);
-        tap_code16(KC_GRV);
-        set_mods(mod_state);
-        tap_code16(KC_A);
-      }
-      else
-      {
-        tap_code16(KC_GRV);
-        tap_code16(KC_A);
-      }
-    }
-    break;
-  case CKC_EGRAV:
-    if (record->event.pressed)
-    {
-      if (mod_state & MOD_MASK_SHIFT)
-      {
-        del_mods(MOD_MASK_SHIFT);
-        tap_code16(KC_GRV);
-        set_mods(mod_state);
-        tap_code16(KC_E);
-      }
-      else
-      {
-        tap_code16(KC_GRV);
-        tap_code16(KC_E);
-      }
-    }
-    break;
-  case CKC_HASH:
-    if (record->event.pressed)
-    {
-      if (mod_state & MOD_MASK_SHIFT)
-      {
-        del_mods(MOD_MASK_SHIFT);
-        tap_code16(US_PERC);
-        set_mods(mod_state);
-      }
-      else
-      {
-        tap_code16(US_HASH);
       }
     }
     break;
@@ -238,7 +203,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     }
     break;
   case KC_SLASH:
-  if (record->event.pressed)
+    if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
       {
@@ -253,7 +218,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     }
     break;
   case KC_EQUAL:
-  if (record->event.pressed)
+    if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
       {
@@ -268,7 +233,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     }
     break;
   case US_LPRN:
-  if (record->event.pressed)
+    if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
       {
@@ -283,7 +248,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     }
     break;
   case US_RPRN:
-  if (record->event.pressed)
+    if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
       {
@@ -324,6 +289,40 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       else
       {
         tap_code16(KC_AT);
+      }
+    }
+    break;
+  case CKC_AGRAV:
+    if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code16(KC_GRV);
+        set_mods(mod_state);
+        tap_code16(KC_A);
+      }
+      else
+      {
+        tap_code16(KC_GRV);
+        tap_code16(KC_A);
+      }
+    }
+    break;
+  case CKC_EGRAV:
+    if (record->event.pressed)
+    {
+      if (mod_state & MOD_MASK_SHIFT)
+      {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code16(KC_GRV);
+        set_mods(mod_state);
+        tap_code16(KC_E);
+      }
+      else
+      {
+        tap_code16(KC_GRV);
+        tap_code16(KC_E);
       }
     }
     break;
