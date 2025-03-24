@@ -3,13 +3,14 @@
 ## Fixes
 
 - [x] Change `' (deadkey)` to `'`
-- [ ] Change `" (deadkey)` to `"`
+- [x] Change `" (deadkey)` to `"`
+- [x] Change right hand W to Z
 
 ## Features
 
 - [ ] Add numbers on Shift top row
 - [ ] Add shift symboles
-  - [ ] `#` => `%` swap
+  - [x] `#` => `%` swap
   - [x] `$` => `€`
   - [x] `@` => `_`
   - [x] `'` => `?`

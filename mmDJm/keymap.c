@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     HASH,             ST_MACRO_0,    ST_MACRO_1,    DQUOTE,      KC_MINUS,    US_PLUS,     KC_NO,                      KC_NO,    US_ASTR,    KC_SLASH,    KC_EQUAL,    US_LPRN,     US_RPRN,    DOLAR,
     AT,               AGRAV,         KC_J,          KC_O,        US_EACU,     KC_B,        KC_NO,                      KC_NO,    KC_F,       KC_D,        KC_L,        QUOTE,       KC_Q,       KC_X,
     KC_LEFT_SHIFT,    KC_A,          KC_I,          KC_E,        KC_U,        COMMA,       KC_NO,                      KC_NO,    KC_P,       KC_T,        KC_S,        KC_R,        KC_N,       CIRC,
-    KC_ESCAPE,        KC_K,          KC_Y,          EGRAV,       DOT,         KC_W,                                              KC_G,       KC_C,        KC_M,        KC_H,        KC_V,       KC_W,
+    KC_ESCAPE,        KC_K,          KC_Y,          EGRAV,       DOT,         KC_W,                                              KC_G,       KC_C,        KC_M,        KC_H,        KC_V,       KC_Z,
     KC_NO,            KC_NO,         KC_NO,         KC_NO,       KC_NO,       KC_NO,                                             KC_NO,      KC_NO,       KC_NO,       KC_NO,       KC_NO,      KC_NO,
                                                     KC_SPACE,    KC_TAB,      KC_NO,                                             KC_NO,      KC_BSPC,     KC_ENTER
   ),
@@ -155,6 +155,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         set_mods(mod_state);
       } else {
         tap_code16(S(KC_QUOTE));
+        tap_code16(KC_SPACE);
       }
     }
     break;
