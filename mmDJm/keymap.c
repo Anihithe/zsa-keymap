@@ -10,13 +10,20 @@ enum custom_keycodes
   // RGB
   RGB_SLD = ML_SAFE_RANGE,
 
+  CKC_HASH,
   CKC_LDAQM,
   CKC_RDAQM,
-  CKC_AGRAV,
-  CKC_EGRAV,
-  CKC_HASH,
+  CKC_MINUS,
+  CKC_PLUS,
+  CKC_ASTR,
+  CKC_SLASH,
+  CKC_EQUAL,
+  CKC_LPRN,
+  CKC_RPRN,
   CKC_DOLAR,
   CKC_AT,
+  CKC_AGRAV,
+  CKC_EGRAV,
   CKC_QUOTE,
   CKC_DQUOTE,
   CKC_COMMA,
@@ -157,7 +164,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       }
     }
     break;
-  case KC_MINUS:
+  case CKC_MINUS:
     if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
@@ -172,7 +179,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       }
     }
     break;
-  case US_PLUS:
+  case CKC_PLUS:
     if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
@@ -187,7 +194,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       }
     }
     break;
-  case US_ASTR:
+  case CKC_ASTR:
     if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
@@ -202,7 +209,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       }
     }
     break;
-  case KC_SLASH:
+  case CKC_SLASH:
     if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
@@ -217,7 +224,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       }
     }
     break;
-  case KC_EQUAL:
+  case CKC_EQUAL:
     if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
@@ -232,7 +239,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       }
     }
     break;
-  case US_LPRN:
+  case CKC_LPRN:
     if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
@@ -247,7 +254,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       }
     }
     break;
-  case US_RPRN:
+  case CKC_RPRN:
     if (record->event.pressed)
     {
       if (mod_state & MOD_MASK_SHIFT)
