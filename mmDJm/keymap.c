@@ -198,12 +198,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       if (mod_state & MOD_MASK_SHIFT)
       {
         del_mods(MOD_MASK_SHIFT);
-        tap_code(KC_4);
+        tap_code16(KC_4);
         set_mods(mod_state);
       }
       else
       {
-        tap_code(KC_MINUS);
+        tap_code16(KC_MINUS);
       }
     }
     break;
@@ -213,12 +213,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       if (mod_state & MOD_MASK_SHIFT)
       {
         del_mods(MOD_MASK_SHIFT);
-        tap_code(KC_5);
+        tap_code16(KC_5);
         set_mods(mod_state);
       }
       else
       {
-        tap_code(US_PLUS);
+        tap_code16(US_PLUS);
       }
     }
     break;
@@ -228,12 +228,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       if (mod_state & MOD_MASK_SHIFT)
       {
         del_mods(MOD_MASK_SHIFT);
-        tap_code(KC_6);
+        tap_code16(KC_6);
         set_mods(mod_state);
       }
       else
       {
-        tap_code(US_ASTR);
+        tap_code16(US_ASTR);
       }
     }
     break;
@@ -243,12 +243,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       if (mod_state & MOD_MASK_SHIFT)
       {
         del_mods(MOD_MASK_SHIFT);
-        tap_code(KC_7);
+        tap_code16(KC_7);
         set_mods(mod_state);
       }
       else
       {
-        tap_code(KC_SLASH);
+        tap_code16(KC_SLASH);
       }
     }
     break;
@@ -258,12 +258,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       if (mod_state & MOD_MASK_SHIFT)
       {
         del_mods(MOD_MASK_SHIFT);
-        tap_code(KC_8);
+        tap_code16(KC_8);
         set_mods(mod_state);
       }
       else
       {
-        tap_code(KC_EQUAL);
+        tap_code16(KC_EQUAL);
       }
     }
     break;
@@ -273,12 +273,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       if (mod_state & MOD_MASK_SHIFT)
       {
         del_mods(MOD_MASK_SHIFT);
-        tap_code(KC_9);
+        tap_code16(KC_9);
         set_mods(mod_state);
       }
       else
       {
-        tap_code(US_LPRN);
+        tap_code16(US_LPRN);
       }
     }
     break;
@@ -288,12 +288,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       if (mod_state & MOD_MASK_SHIFT)
       {
         del_mods(MOD_MASK_SHIFT);
-        tap_code(KC_0);
+        tap_code16(KC_0);
         set_mods(mod_state);
       }
       else
       {
-        tap_code(US_RPRN);
+        tap_code16(US_RPRN);
       }
     }
     break;
@@ -349,7 +349,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
       if (mod_state & MOD_MASK_SHIFT)
       {
         del_mods(MOD_MASK_SHIFT);
-        tap_code(KC_SCLN);
+        tap_code16(KC_SCLN);
         set_mods(mod_state);
       }
       else
