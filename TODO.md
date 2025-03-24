@@ -2,19 +2,20 @@
 
 ## Fixes
 
-- [ ] Change `' (deadkey)` to `'`
+- [x] Change `' (deadkey)` to `'`
+- [ ] Change `" (deadkey)` to `"`
 
 ## Features
 
 - [ ] Add numbers on Shift top row
 - [ ] Add shift symboles
-  - [x] `#` => `%`
+  - [ ] `#` => `%` swap
   - [x] `$` => `€`
-  - [ ] `@` => `_`
-  - [ ] `'` => `?`
-  - [ ] `,` => `;`
-  - [ ] `^` => `!`
-  - [ ] `.` => `:`
+  - [x] `@` => `_`
+  - [x] `'` => `?`
+  - [x] `,` => `;`
+  - [x] `^` => `!`
+  - [x] `.` => `:`
 - [ ] Add `^` Optimot layer
   - Custom SendString or Leadkey ?
 - [ ] Add `^ ^` Optimot layer

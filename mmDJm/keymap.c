@@ -20,6 +20,7 @@ enum custom_keycodes {
   DOLAR,
   AT,
   QUOTE,
+  DQUOTE,
   COMMA,
   CIRC,
   DOT
@@ -28,7 +29,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    HASH,             ST_MACRO_0,    ST_MACRO_1,    CT_DQOT,     KC_MINUS,    US_PLUS,     KC_NO,                      KC_NO,    US_ASTR,    KC_SLASH,    KC_EQUAL,    US_LPRN,     US_RPRN,    DOLAR,
+    HASH,             ST_MACRO_0,    ST_MACRO_1,    DQUOTE,      KC_MINUS,    US_PLUS,     KC_NO,                      KC_NO,    US_ASTR,    KC_SLASH,    KC_EQUAL,    US_LPRN,     US_RPRN,    DOLAR,
     AT,               AGRAV,         KC_J,          KC_O,        US_EACU,     KC_B,        KC_NO,                      KC_NO,    KC_F,       KC_D,        KC_L,        QUOTE,       KC_Q,       KC_X,
     KC_LEFT_SHIFT,    KC_A,          KC_I,          KC_E,        KC_U,        COMMA,       KC_NO,                      KC_NO,    KC_P,       KC_T,        KC_S,        KC_R,        KC_N,       CIRC,
     KC_ESCAPE,        KC_K,          KC_Y,          EGRAV,       DOT,         KC_W,                                              KC_G,       KC_C,        KC_M,        KC_H,        KC_V,       KC_W,
@@ -87,16 +88,27 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   uint8_t mod_state = get_mods();
   switch (keycode) {
 
-    //MACRO
     case ST_MACRO_0:
-    if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_7) SS_TAP(X_KP_1)));
-    }
-    break;
+      if (record->event.pressed) {
+        if (mod_state & MOD_MASK_SHIFT) {
+          del_mods(MOD_MASK_SHIFT);
+          tap_code16(KC_1);
+          set_mods(mod_state);
+        } else {
+          SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_7) SS_TAP(X_KP_1)));
+        }
+      }
+      break;
     case ST_MACRO_1:
-    if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_8) SS_TAP(X_KP_7)));
-    }
+      if (record->event.pressed) {
+        if (mod_state & MOD_MASK_SHIFT) {
+          del_mods(MOD_MASK_SHIFT);
+          tap_code16(KC_2);
+          set_mods(mod_state);
+        } else {
+          SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_8) SS_TAP(X_KP_7)));
+        }
+      }
     break;
     case AGRAV:
       if(record->event.pressed) {
@@ -128,13 +140,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
           del_mods(MOD_MASK_SHIFT);
-          tap_code16(US_HASH);
+          tap_code16(US_PERC);
           set_mods(mod_state);
         } else {
-          tap_code16(US_PERC);
+          tap_code16(US_HASH);
         }
       }
       break;
+    case DQUOTE:
+    if(record->event.pressed) {
+      if (mod_state & MOD_MASK_SHIFT) {
+        del_mods(MOD_MASK_SHIFT);
+        tap_code16(KC_3);
+        set_mods(mod_state);
+      } else {
+        tap_code16(S(KC_QUOTE));
+      }
+    }
+    break;
     case DOLAR:
       if(record->event.pressed) {
         if (mod_state & MOD_MASK_SHIFT) {
@@ -214,6 +237,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
-
-
-
