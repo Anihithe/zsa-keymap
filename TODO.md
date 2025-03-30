@@ -1,13 +1,8 @@
 # Anihithe's Optimot with US-INTL drivers
 
-## Fixes
+## DONE
 
-- [x] Change `' (deadkey)` to `'`
-- [x] Change `" (deadkey)` to `"`
-- [x] Change right hand W to Z
-
-## Features
-
+- [x] Add base layer
 - [x] Add numbers on Shift top row
 - [x] Add shift symboles
   - [x] `#` => `%` swap
@@ -17,6 +12,15 @@
   - [x] `,` => `;`
   - [x] `^` => `!`
   - [x] `.` => `:`
+
+## TODO
+
+## Fixes
+
+- [ ] Refactor sent keycode for better reading (try hash code fn)
+
+## Features
+
 - [ ] Add `^` Optimot layer
   - Custom SendString or Leadkey ?
 - [ ] Add `^ ^` Optimot layer
