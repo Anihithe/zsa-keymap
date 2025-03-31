@@ -12,7 +12,7 @@ enum custom_keycodes {
   // Layer0 - Row0
   L0_HASH, L0_ONE, L0_TWO, L0_THREE, L0_FOUR, L0_FIVE, L0_SIX, L0_SEVEN, L0_EIGHT, L0_NINE, L0_ZERO, L0_DOLAR,
   // Layer0 - Row1
-  L0_AT, L0_AGRAV, L0_EGRAV, L0_QUOTE
+  L0_AT, L0_AGRAV, L0_EGRAV, L0_QUOTE,
   // Layer0 - Row2
   L0_COMMA, L0_CIRC,
   // Layer0 - Row3
