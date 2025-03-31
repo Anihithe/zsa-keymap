@@ -2,7 +2,6 @@
 #include "version.h"
 #include "i18n.h"
 #include "keymap_us_international.h"
-#include "custom_keycode.c"
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
 
@@ -11,7 +10,7 @@ enum custom_keycodes
   // RGB
   RGB_SLD = ML_SAFE_RANGE,
 
-  CKC_HASH,
+  L0_HASH,
   CKC_LDAQM,
   CKC_RDAQM,
   CKC_MINUS,
@@ -34,7 +33,7 @@ enum custom_keycodes
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_moonlander(
-        CKC_HASH, CKC_LDAQM, CKC_RDAQM, CKC_DQUOTE, CKC_MINUS, CKC_PLUS, KC_NO, KC_NO, CKC_ASTR, CKC_SLASH, CKC_EQUAL, CKC_LPRN, CKC_RPRN, CKC_DOLAR,
+        L0_HASH, CKC_LDAQM, CKC_RDAQM, CKC_DQUOTE, CKC_MINUS, CKC_PLUS, KC_NO, KC_NO, CKC_ASTR, CKC_SLASH, CKC_EQUAL, CKC_LPRN, CKC_RPRN, CKC_DOLAR,
         CKC_AT, CKC_AGRAV, KC_J, KC_O, US_EACU, KC_B, KC_NO, KC_NO, KC_F, KC_D, KC_L, CKC_QUOTE, KC_Q, KC_X,
         KC_LEFT_SHIFT, KC_A, KC_I, KC_E, KC_U, CKC_COMMA, KC_NO, KC_NO, KC_P, KC_T, KC_S, KC_R, KC_N, CKC_CIRC,
         KC_ESCAPE, KC_K, KC_Y, CKC_EGRAV, CKC_DOT, KC_W, KC_G, KC_C, KC_M, KC_H, KC_V, KC_Z,
@@ -104,8 +103,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
   uint8_t mod_state = get_mods();
   switch (keycode)
   {
-  case CKC_HASH:
-    ckc_hash();
+  case L0_HASH:
+    l0_hash();
     break;
   case CKC_LDAQM:
     if (record->event.pressed)
@@ -396,4 +395,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     return false;
   }
   return true;
+}
+
+void l0_hash(void) {
+  if (record->event.pressed) {
+    if (mod_state & MOD_MASK_SHIFT) {
+      del_mods(MOD_MASK_SHIFT);
+      tap_code16(US_PERC);
+      set_mods(mod_state);
+    } else {
+      tap_code16(US_HASH);
+    }
+  }
 }
