@@ -307,14 +307,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if(record->event.pressed) {
     if (mod_state & MOD_MASK_SHIFT) {
       del_mods(MOD_MASK_SHIFT);
-      if(mod_circ) {
+      if(mod_circ | mod_trem) {
         tap_code16(S(US_CCED));
       } else {
         tap_code16(S(KC_C));
       }
       set_mods(mod_state);
     } else {
-      if(mod_circ) {
+      if(mod_circ | mod_trem) {
         tap_code16(US_CCED);
       } else {
         tap_code16(KC_C);
