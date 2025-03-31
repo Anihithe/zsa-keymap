@@ -40,6 +40,9 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
 
 };
 
+bool mod_circ = false;
+bool mod_trem = false;
+
 void set_layer_color(int layer) {
   for (int i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
     HSV hsv = {
@@ -78,8 +81,6 @@ bool rgb_matrix_indicators_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   uint8_t mod_state = get_mods();
-  bool mod_circ = false;
-  bool mod_trem = false;
 
   switch (keycode) {
   case L0_HASH:
