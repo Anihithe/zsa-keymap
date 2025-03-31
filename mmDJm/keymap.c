@@ -43,6 +43,11 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
 bool mod_circ = false;
 bool mod_trem = false;
 
+void reset_custom_mod(void) {
+  mod_circ = false;
+  mod_trem = false;
+}
+
 void set_layer_color(int layer) {
   for (int i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
     HSV hsv = {
@@ -305,23 +310,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
   case L0_C:
-  if(record->event.pressed) {
-    if (mod_state & MOD_MASK_SHIFT) {
-      del_mods(MOD_MASK_SHIFT);
-      if(mod_circ | mod_trem) {
-        tap_code16(S(US_CCED));
+    if(record->event.pressed) {
+      if (mod_state & MOD_MASK_SHIFT) {
+        del_mods(MOD_MASK_SHIFT);
+        if(mod_circ | mod_trem) {
+          tap_code16(S(US_CCED));
+        } else {
+          tap_code16(S(KC_C));
+        }
+        set_mods(mod_state);
       } else {
-        tap_code16(S(KC_C));
-      }
-      set_mods(mod_state);
-    } else {
-      if(mod_circ | mod_trem) {
-        tap_code16(US_CCED);
-      } else {
-        tap_code16(KC_C);
+        if(mod_circ | mod_trem) {
+          tap_code16(US_CCED);
+        } else {
+          tap_code16(KC_C);
+        }
       }
     }
-  }
+    reset_custom_mod();
+    break;
 
   case RGB_SLD:
     if (rawhid_state.rgb_control) {
