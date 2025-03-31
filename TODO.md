@@ -17,7 +17,7 @@
 
 ## Fixes
 
-- [ ] Refactor sent keycode for better reading (try hash code fn)
+N/A
 
 ## Features
 
