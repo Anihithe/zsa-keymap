@@ -98,6 +98,23 @@ bool rgb_matrix_indicators_user(void)
   return true;
 }
 
+void l0_hash(void)
+{
+  if (record->event.pressed)
+  {
+    if (mod_state & MOD_MASK_SHIFT)
+    {
+      del_mods(MOD_MASK_SHIFT);
+      tap_code16(US_PERC);
+      set_mods(mod_state);
+    }
+    else
+    {
+      tap_code16(US_HASH);
+    }
+  }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record)
 {
   uint8_t mod_state = get_mods();
@@ -395,16 +412,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
     return false;
   }
   return true;
-}
-
-void l0_hash(void) {
-  if (record->event.pressed) {
-    if (mod_state & MOD_MASK_SHIFT) {
-      del_mods(MOD_MASK_SHIFT);
-      tap_code16(US_PERC);
-      set_mods(mod_state);
-    } else {
-      tap_code16(US_HASH);
-    }
-  }
 }
